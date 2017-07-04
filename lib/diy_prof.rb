@@ -5,8 +5,8 @@ require 'diy_prof/dot_reporter'
 require 'tempfile'
 
 module DiyProf
-  def self.start_profiling
-    @tracer = Tracer.new(DotReporter.new)
+  def self.start_profiling(source_filter: nil)
+    @tracer = Tracer.new(DotReporter.new, source_filter: source_filter)
     @tracer.enable
   end
 
